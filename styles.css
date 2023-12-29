@@ -1,0 +1,67 @@
+/* styles.css */
+
+/* General styling for the main window */
+QWidget {
+    background: #ffffff;
+    border: 1px solid #d5d5d5;
+    border-radius: 0; /* Set border radius to 0 for a square window */
+}
+
+/* Styling for the navigation toolbar */
+QToolBar {
+    border: 1px solid #d5d5d5;
+    background: #ffffff; /* Set background color to white */
+    border-radius: 0; /* Set border radius to 0 for a square toolbar */
+    spacing: 10px; /* Set spacing between items */
+    margin: 2px; /* Set margin to create space around the toolbar */
+}
+
+QToolBar::handle {
+    background: #d5d5d5;
+    width: 2px;
+}
+
+QToolBar::separator {
+    background: #d5d5d5;
+    width: 1px;
+    height: 15px;
+}
+
+/* Styling for the address/search bar */
+QLineEdit {
+    padding: 3px;
+    border: 1px solid #d5d5d5;
+    border-radius: 2px;
+    color: #000000; /* Set text color to dark */
+    background: #e5e5e5; /* Set background color to grey */
+    margin-right: 5px; /* Set margin to create space to the right */
+}
+
+QLineEdit:focus {
+    border-color: #4d90fe; /* Highlight border when focused */
+}
+
+/* Styling for the control button */
+QToolButton {
+    border: 1px solid #d5d5d5;
+    background: #cccccc; /* Set background color to grey */
+    border-radius: 2px;
+    padding: 4px 6px; /* Adjust padding for smaller buttons */
+    margin-right: 5px; /* Set margin to create space to the right */
+}
+
+QToolButton:hover {
+    background: #e5e5e5; /* Highlight button on hover */
+}
+
+/* Styling for the system tray icon */
+QSystemTrayIcon {
+    background: #ffffff;
+}
+
+/* Styling for the status bar */
+QStatusBar {
+    background: #ffffff; /* Set background color to white */
+    color: #000000;
+    border-top: 1px solid #d5d5d5;
+}
