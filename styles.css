@@ -12,7 +12,7 @@ QToolBar {
     border: 1px solid #d5d5d5;
     background: #ffffff; /* Set background color to white */
     border-radius: 0; /* Set border radius to 0 for a square toolbar */
-    spacing: 10px; /* Set spacing between items */
+    spacing: 5px; /* Set spacing between items */
     margin: 2px; /* Set margin to create space around the toolbar */
 }
 
@@ -31,27 +31,30 @@ QToolBar::separator {
 QLineEdit {
     padding: 3px;
     border: 1px solid #d5d5d5;
-    border-radius: 2px;
+    border-radius: 11px;
     color: #000000; /* Set text color to dark */
-    background: #e5e5e5; /* Set background color to grey */
+    background: #f5f5f5; /* Set background color to grey */
     margin-right: 5px; /* Set margin to create space to the right */
+    padding-left: 7px;
 }
 
 QLineEdit:focus {
     border-color: #4d90fe; /* Highlight border when focused */
+    background: #f5f5f5;
 }
 
 /* Styling for the control button */
 QToolButton {
     border: 1px solid #d5d5d5;
-    background: #cccccc; /* Set background color to grey */
-    border-radius: 2px;
-    padding: 4px 6px; /* Adjust padding for smaller buttons */
-    margin-right: 5px; /* Set margin to create space to the right */
+    background: #ffffff; /* Set background color to grey */
+    border-radius: 13%;
+    padding: 4px 2px; /* Adjust padding for smaller buttons */
+    margin-left: 5px; /* Отступ с левой стороны для всех кнопок */
 }
 
 QToolButton:hover {
-    background: #e5e5e5; /* Highlight button on hover */
+    background: #ffffff; /* Highlight button on hover */
+    border-color: #4d90fe;
 }
 
 /* Styling for the system tray icon */
