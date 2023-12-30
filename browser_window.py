@@ -1,3 +1,4 @@
+# browser_windows.py
 from PyQt5.QtCore import QUrl, Qt, QPoint
 from PyQt5.QtGui import QIcon, QKeySequence
 from PyQt5.QtWidgets import QApplication, QMainWindow, QToolBar, QLineEdit, QMenu, QToolButton, QSystemTrayIcon, QAction, QMessageBox
@@ -30,6 +31,7 @@ class BrowserWindow(QMainWindow):
         self.old_pos = None
 
         self.browser = Browser()
+        self.browser.urlChanged.connect(self.update_urlbar)
 
         nav_toolbar = QToolBar("Navigation")
         self.addToolBar(Qt.TopToolBarArea, nav_toolbar)
@@ -74,7 +76,7 @@ class BrowserWindow(QMainWindow):
         close_action = control_menu.addAction("Close", self.close_browser)
         close_action.setShortcut(QKeySequence(Qt.CTRL + Qt.Key_Q))  
 
-        full_action = control_menu.addAction("Full", self.toggle_full_screen)
+        full_action = control_menu.addAction("Full-screen", self.toggle_full_screen)
         full_action.setShortcut(QKeySequence(Qt.Key_F11))
 
         control_btn = QToolButton()
@@ -108,6 +110,10 @@ class BrowserWindow(QMainWindow):
 
         # Set the browser in the central area of the window
         self.setCentralWidget(self.browser)
+        
+    def update_urlbar(self, q):
+        # Получаем текущий URL и обновляем содержимое строки urlbar
+        self.urlbar.setText(q.toString())
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton and self.draggable:
